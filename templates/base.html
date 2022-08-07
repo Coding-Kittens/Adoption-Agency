@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static',filename='app.css')}}">
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  <body>
+
+<section id="page_stuff">
+  <nav>
+  <a href="/">Home</a>
+  <a href="/pets/available">Available pets</a>
+  <a href="/pets/adopted">Adopted pets</a>
+  <a href="/add" id="nav_add_pet">Add pet</a>
+  </nav>
+
+  {% block content %}
+  {% endblock %}
+</section>
+
+
+</script>
+  </body>
+</html>

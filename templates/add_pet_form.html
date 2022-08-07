@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %} Add new pet {% endblock %}
+
+    {% block content %}
+   <form class="" action="/add" method="POST">
+     {% include 'forms.html' %}
+     <button type="submit" name="button">Add</button>
+   </form>
+    {% endblock %}

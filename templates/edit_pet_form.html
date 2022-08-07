@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} {{current_pet.name}} {% endblock %}
+
+{% block content %}
+<h1>{{current_pet.name}}</h1>
+
+<img src="{{current_pet.photo_url}}" alt="no photo for {{current_pet.name}}">
+<p>{%if current_pet.is_available %} {{current_pet.name}} is <b>available</b>! {%else%} {{current_pet.name}} is <b>adopted</b>! {%endif%}</p>
+<p>{{current_pet.name}} is a {{current_pet.species}}.</p>
+<p>{{current_pet.name}} is {%if current_pet.age%}{{current_pet.age}} years old{%else%}less than a year old{%endif%}.</p>
+<p>{{current_pet.notes}}</p>
+
+
+  <h2>Edit {{current_pet.name}}'s details</h2>
+
+   <form class="" action="/pet/{{current_pet.id}}" method="POST">
+     {% include 'forms.html' %}
+     <button type="submit" name="button">Save</button>
+   </form>
+    {% endblock %}
